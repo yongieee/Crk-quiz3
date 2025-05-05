@@ -1,0 +1,303 @@
+html, body, #root {
+  height: 120vh;
+  margin: none;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #1a1a2e, #3a0ca3);
+  font-family: 'Press Start 2P', cursive;
+}
+
+.anime-navbar {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  animation: navbarEnter 1s ease;
+  overflow: visible;
+  animation: none;
+}
+
+.anime-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0 30px 10px rgba(255, 136, 255, 0.15);
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes navbarEnter {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.anime-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.anime-logo .dim {
+  color: #ffeeff;
+}
+
+.logo-gif {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffb6faff;
+}
+
+.anime-nav-links {
+  display: flex;
+  gap: 30px; /* Reduced the gap for less spacing between items */
+  justify-content: center;
+  flex: 1;
+}
+
+.anime-nav-item {
+  padding: 16px 28px;
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.anime-nav-item:hover {
+  transform: translateY(8px) scale(1.05);
+  box-shadow: none;
+  background: transparent;
+  color: #ff48c4;
+}
+
+.anime-nav-item.active {
+  color: #ff80ec;
+  text-shadow: 0 0 10px #ff80ec;
+}
+
+.fall-animation {
+  animation: fall 0.7s ease forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(20px) rotate(5deg);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(60px) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+.hover-reveal {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.anime-nav-item:hover .hover-reveal {
+  transform: translateX(-50%) translateY(10px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hover-reveal img {
+  width: 100px;
+  height: auto;
+  border-radius: 12px;
+  background: transparent;
+  padding: 0;
+}
+
+
+
+.jumpscare-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInOut 2s forwards;
+}
+
+.jumpscare-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+
+
+
+
+
+
+/* 🍔 Burger Icon Styles */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger span {
+  display: block;
+  height: 4px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+/* 🔽 Expand Nav */
+.nav-open .anime-nav-links {
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 📱 Mobile View Adjustments */
+@media (max-width: 768px) {
+  .anime-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+  }
+
+  .burger {
+    display: flex;
+    margin-left: auto;
+    margin-top: -40px;
+  }
+
+  .anime-nav-links {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+
+  .anime-nav-item {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 425px) {
+  .anime-navbar {
+    padding: 12px 16px;
+  }
+
+  .anime-logo {
+    font-size: 20px;
+    gap: 10px;
+  }
+
+  .logo-gif {
+    width: 40px;
+    height: 40px;
+  }
+
+  .burger {
+    width: 24px;
+    height: 18px;
+    margin-top: -30px;
+  }
+
+  .burger span {
+    height: 3px;
+  }
+
+  .anime-nav-links {
+    gap: 10px;
+  }
+
+  .anime-nav-item {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .hover-reveal img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .anime-navbar {
+    flex-wrap: nowrap; /* Prevent items from wrapping to a new line */
+    padding: 24px 40px;
+  }
+
+  .anime-nav-links {
+    justify-content: center; /* Center the items */
+    gap: 16px;
+    flex-wrap: nowrap; /* Keep all items on the same line */
+  }
+
+  .anime-nav-item {
+    padding: 12px 18px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,194 @@
+.hollyberry-wrapper {
+  background-image: url('./hollyberry-imgs/hd-berry.png');
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  box-sizing: border-box;
+  flex-direction: column;
+  image-rendering: auto;
+}
+
+.hollyberry-content-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  width: 90vw;
+  max-width: 1200px;
+  height: 75vh;
+  margin-bottom: 250px;
+}
+
+.hollyberry-image {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 55%;
+}
+
+.image-placeholder {
+  width: 80%;
+  max-width: 250px;
+  height: 800px;
+  background-color: #ffbbf1;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 0 10px #ff77ff;
+}
+
+.hollyberry-text-box {
+  flex: 1 1 0;
+  max-width: 40%;
+  width: auto;
+  background-image: url('./bg-home/frame.png');
+  background-size: 660px 830px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  padding: 30px;
+  height: calc(100% - 50px);
+  box-shadow: 0 0 20px rgba(255, 128, 236, 0.3);
+  overflow: hidden;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.hollyberry-text-scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 8px;
+  color: inherit;
+  font-family: 'Rock Salt', cursive;
+  font-size: 20px;
+  line-height: 1.6;
+  text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.6);
+  max-height: 600px; /* Ensure the text container has a max height */
+}
+
+.hollyberry-video-preview {
+  margin-top: 15px;
+  width: 90%;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.hollyberry-video-preview iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 6px;
+}
+
+.hollyberry-gif-image {
+  width: 650px;
+  height: auto;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  object-fit: contain;
+  max-width: 100%;
+  display: block;
+}
+
+.hollyberry-text-scroll::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+.hollyberry-text-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.hollyberry-text-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .hollyberry-content-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    margin-bottom: 50px;
+  }
+
+  .hollyberry-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hollyberry-text-box {
+    max-width: 90%;
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .hollyberry-text-scroll {
+    font-size: 18px;
+    padding-right: 10px;
+    max-height: 300px; /* Ensure the scrollable text container is not too tall */
+  }
+
+  .hollyberry-gif-image {
+    width: 100%;
+    max-width: 450px; /* Adjusted to a more suitable size for smaller screens */
+  }
+
+  .image-placeholder {
+    width: 70%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 425px) {
+  .hollyberry-wrapper {
+    min-height: 130vh;
+    width: 100vw;
+  }
+  .hollyberry-text-box {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .hollyberry-text-scroll {
+    font-size: 16px;
+    max-height: 250px; /* Adjust height for very small screens */
+  }
+
+  .hollyberry-gif-image {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hollyberry-image {
+    max-width: 100%;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 250px;
+  }
+
+  .hollyberry-video-preview {
+    width: 100%;
+    max-width: 300px;
+  }
+}
